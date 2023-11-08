@@ -1,1 +1,94 @@
-/* TODO */
+
+
+button {
+    width: 60px;
+    aspect-ratio: 1/1;
+}
+
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 16px;
+    max-width: 284px;
+    justify-content: center;
+    background-color: #3B3E3D;
+}
+
+.bezel {
+    background-color: #3B3E3D;
+}
+
+.model {
+    background-color: #3B3E3D;
+    color: white;
+}
+
+.interface {
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+
+}
+
+.face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.case {
+    padding: 90px 0px 24px 0px;
+    background-color: #DDCEA4;
+    max-width: 360px;
+    border-radius: 16px 16px 8px 8px;
+}
+
+.bezel {
+    display: flex;
+    max-width: 284px;
+    padding: 12px 16px;
+}
+
+.recessed-bezel {
+    max-width: 316px;
+    padding: 0px 16px;
+    height: 32px;
+    background-color: #150F0F;
+}
+
+.logo {
+    margin-left: 24px;
+    margin-right: auto;
+}
+
+.screen {
+    background-color: darkred;
+    color: red;
+    width: 284px;
+    height: 32px;
+    flex: 1 0 0;
+    padding: 12px 16px;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.operators {
+    background-color: #E0D2AE;
+}
+
+.blank {
+    background-color: #3B3E3D;
+    width: 60px;
+    aspect-ratio: 1/1;
+}
+
+.rec-btn {
+    width: 96px;
+    height: 60px;
+}
+
+#equals {
+    background-color: #FD9D56;
+}
