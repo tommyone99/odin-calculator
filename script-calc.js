@@ -10,10 +10,33 @@ nineKey.addEventListener("click", populateDisplay);
 const eightKey = document.querySelector("#eight");
 eightKey.addEventListener("click", populateDisplay);
 
+const sevenKey = document.querySelector("#seven");
+sevenKey.addEventListener("click", populateDisplay);
+
+const sixKey = document.querySelector("#six");
+sixKey.addEventListener("click", populateDisplay);
+
+const fiveKey = document.querySelector("#five");
+fiveKey.addEventListener("click", populateDisplay);
+
+const fourKey = document.querySelector("#four");
+fourKey.addEventListener("click", populateDisplay);
+
+const threeKey = document.querySelector("#three");
+threeKey.addEventListener("click", populateDisplay);
+
+const twoKey = document.querySelector("#two");
+twoKey.addEventListener("click", populateDisplay);
+
+const oneKey = document.querySelector("#one");
+oneKey.addEventListener("click", populateDisplay);
+
+const zeroKey = document.querySelector("#zero");
+zeroKey.addEventListener("click", populateDisplay);
+
 function populateDisplay(e) {
     const screen = document.querySelector("#screen");
     let newNum = e.target.id;
-    
     switch(newNum) {
         case "nine":
             newNum = 9;
@@ -41,6 +64,13 @@ function populateDisplay(e) {
             break;        
         case "one":
             newNum = 1;
+            break;
+        case "zero":
+            if (screen.innerHTML === ""){
+                newNum = "";
+                break;
+            }
+            newNum = 0;
             break;
     }
 
