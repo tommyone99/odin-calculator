@@ -2,6 +2,22 @@ let firstNum = 0;
 let operator = "";
 let secondNum = 0;
 
+const ce = document.querySelector("#ce");
+
+const nineKey = document.querySelector("#nine");
+nineKey.addEventListener("click", populateDisplay);
+
+function populateDisplay(e) {
+    const screen = document.querySelector("#screen");
+    let newNum = e.target.id;
+
+    if (newNum === "nine") {
+        newNum = 9;
+    }
+
+    screen.innerHTML += newNum;
+}
+
 function operate(firstNum, operator, secondNum) {
     let answer = 0;
 

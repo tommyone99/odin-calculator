@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script-calc.js"></script>
+    <script src="script-calc.js" defer></script>
 </head>
 <body>
 
     <div class="case">
         <div class="face">
-            <div class="screen">80085</div>
+            <div class="screen" id="screen">80085</div>
             <div class="interface">
                 <div class="recessed-bezel"></div>
                 <div class="bezel">
-                    <div class="logo">LOGO</div>
+                    <div class="logo"><img src="/img/TOP-logo-v2.png"></div>
                     <div class="model">Odinmath</div>
                 </div>
                 <div class="buttons-container">
-                    <button class="operators">CE</button>
+                    <button class="operators" id="ce">CE</button>
                     <button class="operators" id="divide">&divide;</button>
                     <button class="operators" id="multiply">X</button>
                     <div class="blank"></div>
 
                     <button>7</button>
                     <button>8</button>
-                    <button>9</button>
+                    <button id="nine">9</button>
                     <button class="operators" id="clear">C</button>
 
                     <button>4</button>
