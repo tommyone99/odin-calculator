@@ -1,6 +1,7 @@
 let firstNum = 0;
 let operator = "";
 let secondNum = 0;
+let displayValue = "";
 
 const ce = document.querySelector("#ce");
 
@@ -73,8 +74,8 @@ function populateDisplay(e) {
             newNum = 0;
             break;
     }
-
-    screen.innerHTML += newNum;
+    displayValue += newNum;
+    screen.textContent = displayValue;
 }
 
 function operate(firstNum, operator, secondNum) {
