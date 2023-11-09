@@ -7,12 +7,41 @@ const ce = document.querySelector("#ce");
 const nineKey = document.querySelector("#nine");
 nineKey.addEventListener("click", populateDisplay);
 
+const eightKey = document.querySelector("#eight");
+eightKey.addEventListener("click", populateDisplay);
+
 function populateDisplay(e) {
     const screen = document.querySelector("#screen");
     let newNum = e.target.id;
-
-    if (newNum === "nine") {
-        newNum = 9;
+    
+    switch(newNum) {
+        case "nine":
+            newNum = 9;
+            break;
+        case "eight":
+            newNum = 8;
+            break;
+        case "seven":
+            newNum = 7;
+            break;
+        case "six":
+            newNum = 6;
+            break;
+        case "five":
+            newNum = 5;
+            break;
+        case "four":
+            newNum = 4;
+            break;  
+        case "three":
+            newNum = 3;
+            break;        
+        case "two":
+            newNum = 2;
+            break;        
+        case "one":
+            newNum = 1;
+            break;
     }
 
     screen.innerHTML += newNum;
