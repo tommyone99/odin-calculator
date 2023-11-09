@@ -3,8 +3,9 @@ let operator = "";
 let secondNum = 0;
 let displayValue = "";
 
-const ce = document.querySelector("#ce");
+const screen = document.querySelector("#screen");
 
+//number button select and eventlisteners
 const nineKey = document.querySelector("#nine");
 nineKey.addEventListener("click", populateDisplay);
 
@@ -35,47 +36,74 @@ oneKey.addEventListener("click", populateDisplay);
 const zeroKey = document.querySelector("#zero");
 zeroKey.addEventListener("click", populateDisplay);
 
+//clear buttons select, event listener, and anonymous functions
+
+const clearKey = document.querySelector("#clear");
+clearKey.addEventListener("click", function() {
+     displayValue = ""
+     firstNum = 0;
+     secondNum = 0;
+     operator = "";
+     screen.textContent = "0";
+    });
+
+const ce = document.querySelector("#ce");
+ce.addEventListener("click", function() {
+        displayValue = ""
+        screen.textContent = "0";
+    });
+
+//operator event listeners
+
 function populateDisplay(e) {
-    const screen = document.querySelector("#screen");
     let newNum = e.target.id;
     switch(newNum) {
         case "nine":
-            newNum = 9;
+            newNum = "9";
             break;
         case "eight":
-            newNum = 8;
+            newNum = "8";
             break;
         case "seven":
-            newNum = 7;
+            newNum = "7";
             break;
         case "six":
-            newNum = 6;
+            newNum = "6";
             break;
         case "five":
-            newNum = 5;
+            newNum = "5";
             break;
         case "four":
-            newNum = 4;
+            newNum = "4";
             break;  
         case "three":
-            newNum = 3;
+            newNum = "3";
             break;        
         case "two":
-            newNum = 2;
+            newNum = "2";
             break;        
         case "one":
-            newNum = 1;
+            newNum = "1";
             break;
         case "zero":
-            if (screen.innerHTML === ""){
-                newNum = "";
-                break;
-            }
-            newNum = 0;
+            newNum = "0";
             break;
     }
-    displayValue += newNum;
-    screen.textContent = displayValue;
+        if (displayValue == "0" && newNum == "0") {
+            screen.textContent = "0";
+        }
+        else if (displayValue == "0" && newNum != "0") {
+            displayValue = newNum;
+            screen.textContent = displayValue;
+        }
+        else if (displayValue.length == 10) {
+            newNum = "";
+        }
+        else {
+            displayValue += newNum;
+            screen.textContent = displayValue;
+        }
+    
 }
 
 function operate(firstNum, operator, secondNum) {
