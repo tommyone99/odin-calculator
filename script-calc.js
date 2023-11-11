@@ -40,7 +40,7 @@ zeroKey.addEventListener("click", populateDisplay);
 
 const clearKey = document.querySelector("#clear");
 clearKey.addEventListener("click", function() {
-     displayValue = ""
+     displayValue = "0"
      firstNum = 0;
      secondNum = 0;
      operator = "";
@@ -49,11 +49,36 @@ clearKey.addEventListener("click", function() {
 
 const ce = document.querySelector("#ce");
 ce.addEventListener("click", function() {
-        displayValue = ""
+        displayValue = "0"
         screen.textContent = "0";
     });
 
 //operator event listeners
+const plus = document.querySelector("#add");
+plus.addEventListener("click", function() {
+    if (firstNum === 0) {
+        
+        firstNum = +displayValue;
+        console.log(firstNum);
+        displayValue = "0";
+        screen.textContent = displayValue;
+    }
+    else {
+        secondNum = +displayValue;
+        operator = "+";
+        //send to math function
+        displayValue = operate(firstNum, operator, secondNum);
+        console.log("displayValue is " + displayValue);
+        //make screen equal the value
+        firstNum = +displayValue;
+        console.log("firstNum is " + firstNum);
+        screen.textContent = firstNum;
+        displayValue = "0";
+    };
+
+
+
+    });
 
 function populateDisplay(e) {
     let newNum = e.target.id;
@@ -121,6 +146,7 @@ function operate(firstNum, operator, secondNum) {
     else if (operator === "/") {
         answer = divide(firstNum, secondNum);
     };
+    return answer;
 };
 
 function add(a, b) {
