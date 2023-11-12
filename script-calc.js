@@ -56,24 +56,13 @@ ce.addEventListener("click", function() {
 //operator event listeners
 const plus = document.querySelector("#add");
 plus.addEventListener("click", function() {
-    if (firstNum === 0) {
-        
-        firstNum = +displayValue;
-        console.log(firstNum);
-        displayValue = "0";
-        screen.textContent = displayValue;
+    if (firstNum === 0) { //if start of brand new equation
+        operator = "+";
+        getFirstNum();
     }
     else {
-        secondNum = +displayValue;
         operator = "+";
-        //send to math function
-        displayValue = operate(firstNum, operator, secondNum);
-        console.log("displayValue is " + displayValue);
-        //make screen equal the value
-        firstNum = +displayValue;
-        console.log("firstNum is " + firstNum);
-        screen.textContent = firstNum;
-        displayValue = "0";
+        getSecondNum();
     };
 
 
@@ -167,4 +156,29 @@ function multiply(a, b) {
 function divide(a, b) {
     let c = a / b;
     return c;
+};
+
+function getFirstNum() {
+    //make the firstNum variable equal to the value of the first user input
+    firstNum = +displayValue;
+
+    //reset internal display variable so answer value doesn't concatenate 
+    displayValue = "0";
+};
+
+function getSecondNum() {
+        //make the new input equal to the secondNum variable
+        secondNum = +displayValue;
+
+        //send to math function
+        displayValue = operate(firstNum, operator, secondNum);
+
+        //make new firstNum variable equal the value
+        firstNum = +displayValue;
+
+        //show user what the result of continuous calculation is
+        screen.textContent = firstNum;
+
+        //reset value so addional input doesn't concatenate
+        displayValue = "0";
 };
