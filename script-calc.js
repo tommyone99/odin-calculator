@@ -123,7 +123,6 @@ function populateDisplay(e) {
 function operate(e) {
     if (firstNum === 0) { //if start of brand new equation
         operator = e.target.id;
-        console.log(operator);
         getFirstNum();
     }
     else {
@@ -144,9 +143,12 @@ function operate(e) {
         }
         else if (operator === "divide") {
             answer = divide(firstNum, secondNum);
-        };
+        }
+        else if (operator === "equals") {
+            operator = e.target.id;
+            return
+        }
 
-        //send to math function
         displayValue = answer;
 
         //make new firstNum variable equal the value
@@ -159,7 +161,6 @@ function operate(e) {
         displayValue = "0";
 
         operator = e.target.id;
-        console.log(operator);
     };
 };
 
