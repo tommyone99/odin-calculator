@@ -66,6 +66,9 @@ times.addEventListener("click", operate);
 const obelus = document.querySelector("#divide");
 obelus.addEventListener("click", operate);
 
+const equals = document.querySelector("#equals");
+equals.addEventListener("click", operate);
+
 function populateDisplay(e) {
     let newNum = e.target.id;
     switch(newNum) {
