@@ -1,11 +1,11 @@
+//declare global variables
 let firstNum = 0;
 let operator = "";
 let secondNum = 0;
 let displayValue = "";
-
 const screen = document.querySelector("#screen");
 
-//number button select and eventlisteners
+//number button eventlisteners
 const nineKey = document.querySelector("#nine");
 nineKey.addEventListener("click", populateDisplay);
 
@@ -36,7 +36,7 @@ oneKey.addEventListener("click", populateDisplay);
 const zeroKey = document.querySelector("#zero");
 zeroKey.addEventListener("click", populateDisplay);
 
-//clear buttons select, event listener, and anonymous functions
+//clear buttons event listeners
 
 const clearKey = document.querySelector("#clear");
 clearKey.addEventListener("click", function() {
@@ -57,7 +57,14 @@ ce.addEventListener("click", function() {
 const plus = document.querySelector("#add");
 plus.addEventListener("click", operate);
 
+const minus = document.querySelector("#subtract");
+minus.addEventListener("click", operate);
 
+const times = document.querySelector("#multiply");
+times.addEventListener("click", operate);
+
+const obelus = document.querySelector("#divide");
+obelus.addEventListener("click", operate);
 
 function populateDisplay(e) {
     let newNum = e.target.id;
@@ -113,10 +120,10 @@ function populateDisplay(e) {
 function operate(e) {
     if (firstNum === 0) { //if start of brand new equation
         operator = e.target.id;
+        console.log(operator);
         getFirstNum();
     }
     else {
-        operator = e.target.id;
 
         //make the new input equal to the secondNum variable
         secondNum = +displayValue;
@@ -147,6 +154,9 @@ function operate(e) {
 
         //reset value so addional input doesn't concatenate
         displayValue = "0";
+
+        operator = e.target.id;
+        console.log(operator);
     };
 };
 
