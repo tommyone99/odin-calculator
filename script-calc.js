@@ -36,6 +36,9 @@ oneKey.addEventListener("click", populateDisplay);
 const zeroKey = document.querySelector("#zero");
 zeroKey.addEventListener("click", populateDisplay);
 
+const deciKey = document.querySelector("#decimal");
+deciKey.addEventListener("click", populateDisplay);
+
 //clear buttons event listeners
 
 const clearKey = document.querySelector("#clear");
@@ -102,6 +105,9 @@ function populateDisplay(e) {
         case "zero":
             newNum = "0";
             break;
+        case "decimal":
+            newNum = ".";
+            break;
     }
         if (displayValue == "0" && newNum == "0") {
             screen.textContent = "0";
@@ -112,6 +118,16 @@ function populateDisplay(e) {
         }
         else if (displayValue.length == 10) {
             newNum = "";
+        }
+        else if (newNum === ".") {
+            if (displayValue.includes(".") === true) {
+                alert("ONLY ONE DECIMAL POINT IS ALLOWED BECAUSE OF MATH YOU BIG DUMMY!");
+                return
+            }
+            else {
+                displayValue += newNum;
+                screen.textContent = displayValue;
+            }
         }
         else {
             displayValue += newNum;
