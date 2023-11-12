@@ -55,19 +55,9 @@ ce.addEventListener("click", function() {
 
 //operator event listeners
 const plus = document.querySelector("#add");
-plus.addEventListener("click", function() {
-    if (firstNum === 0) { //if start of brand new equation
-        operator = "+";
-        getFirstNum();
-    }
-    else {
-        operator = "+";
-        getSecondNum();
-    };
+plus.addEventListener("click", operate);
 
 
-
-    });
 
 function populateDisplay(e) {
     let newNum = e.target.id;
@@ -120,22 +110,44 @@ function populateDisplay(e) {
     
 }
 
-function operate(firstNum, operator, secondNum) {
-    let answer = 0;
+function operate(e) {
+    if (firstNum === 0) { //if start of brand new equation
+        operator = e.target.id;
+        getFirstNum();
+    }
+    else {
+        operator = e.target.id;
 
-    if (operator == "+") {
-        answer = add(firstNum, secondNum);
-    }
-    else if (operator === "-") {
-        answer = subtract(firstNum, secondNum);
-    }
-    else if (operator === "*") {
-        answer = multiply(firstNum, secondNum);
-    }
-    else if (operator === "/") {
-        answer = divide(firstNum, secondNum);
+        //make the new input equal to the secondNum variable
+        secondNum = +displayValue;
+
+        let answer = 0;
+
+        if (operator == "add") {
+            answer = add(firstNum, secondNum);
+        }
+        else if (operator === "subtract") {
+            answer = subtract(firstNum, secondNum);
+        }
+        else if (operator === "multiply") {
+            answer = multiply(firstNum, secondNum);
+        }
+        else if (operator === "divide") {
+            answer = divide(firstNum, secondNum);
+        };
+
+        //send to math function
+        displayValue = answer;
+
+        //make new firstNum variable equal the value
+        firstNum = +displayValue;
+
+        //show user what the result of continuous calculation is
+        screen.textContent = firstNum;
+
+        //reset value so addional input doesn't concatenate
+        displayValue = "0";
     };
-    return answer;
 };
 
 function add(a, b) {
@@ -164,21 +176,4 @@ function getFirstNum() {
 
     //reset internal display variable so answer value doesn't concatenate 
     displayValue = "0";
-};
-
-function getSecondNum() {
-        //make the new input equal to the secondNum variable
-        secondNum = +displayValue;
-
-        //send to math function
-        displayValue = operate(firstNum, operator, secondNum);
-
-        //make new firstNum variable equal the value
-        firstNum = +displayValue;
-
-        //show user what the result of continuous calculation is
-        screen.textContent = firstNum;
-
-        //reset value so addional input doesn't concatenate
-        displayValue = "0";
 };
