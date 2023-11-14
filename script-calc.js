@@ -175,7 +175,6 @@ function operate(e) {
 
         //check to see if answer will overflow
         //show user what the result of continuous calculation is
-        console.log("is going to check if overflow");
         screen.textContent = checkIfOverflow(firstNum.toString());
 
         //reset value so addional input doesn't concatenate
@@ -201,6 +200,15 @@ function multiply(a, b) {
 };
 
 function divide(a, b) {
+    if (b === 0) {
+        alert("YOU CAN'T DIVIDE BY 0, IT MAKES NO SENSE!");
+        alert("sorry... That was kind of a lot...");
+        alert("It's just that I'm so passionate about these things");
+        alert("As I am a calculator...");
+        alert("And you are a human being...");
+        alert("What must it be like to be a human... I wonder...");
+        return 0;
+    }
     let c = a / b;
     return c;
 };
@@ -216,8 +224,6 @@ function getFirstNum() {
 //todo: Fix overflowing numbers
 
 function checkIfOverflow(displayStr) {
-    console.log(displayStr);
-    console.log(displayStr.length);
     if (displayStr.length > 10) {
         if (displayStr.includes(".")) {
             let n = 9 - displayStr.indexOf(".");
