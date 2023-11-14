@@ -7,13 +7,11 @@ const screen = document.querySelector("#screen");
 
 //number button eventlisteners
 let numberKeys = Array.from(document.querySelectorAll(".numbers"));
-
 numberKeys.forEach(key => {
     key.addEventListener("click", populateDisplay);
 });
 
 //clear buttons event listeners
-
 const clearKey = document.querySelector("#clear");
 clearKey.addEventListener("click", function() {
      displayValue = "0"
@@ -31,12 +29,15 @@ ce.addEventListener("click", function() {
 
 //operator event listeners
 let operatorKeys = Array.from(document.querySelectorAll(".operators"));
-
 operatorKeys.forEach(key => {
     key.addEventListener("click", operate);
 });
 
 
+
+
+
+//custom functions
 function populateDisplay(e) {
     let newNum = e.target.id;
     switch(newNum) {
