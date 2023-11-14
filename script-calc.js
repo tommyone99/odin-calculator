@@ -6,7 +6,6 @@ let displayValue = "";
 const screen = document.querySelector("#screen");
 
 //number button eventlisteners
-
 let numberKeys = Array.from(document.querySelectorAll(".numbers"));
 
 numberKeys.forEach(key => {
@@ -31,20 +30,12 @@ ce.addEventListener("click", function() {
     });
 
 //operator event listeners
-const plus = document.querySelector("#add");
-plus.addEventListener("click", operate);
+let operatorKeys = Array.from(document.querySelectorAll(".operators"));
 
-const minus = document.querySelector("#subtract");
-minus.addEventListener("click", operate);
+operatorKeys.forEach(key => {
+    key.addEventListener("click", operate);
+});
 
-const times = document.querySelector("#multiply");
-times.addEventListener("click", operate);
-
-const obelus = document.querySelector("#divide");
-obelus.addEventListener("click", operate);
-
-const equals = document.querySelector("#equals");
-equals.addEventListener("click", operate);
 
 function populateDisplay(e) {
     let newNum = e.target.id;
