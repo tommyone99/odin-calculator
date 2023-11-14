@@ -5,7 +5,7 @@ let secondNum = 0;
 let displayValue = "";
 const screen = document.querySelector("#screen");
 
-//number button eventlisteners
+//number buttons eventlisteners
 let numberKeys = Array.from(document.querySelectorAll(".numbers"));
 numberKeys.forEach(key => {
     key.addEventListener("click", populateDisplay);
@@ -27,7 +27,7 @@ ce.addEventListener("click", function() {
         screen.textContent = "0";
     });
 
-//operator event listeners
+//operators event listeners
 let operatorKeys = Array.from(document.querySelectorAll(".operators"));
 operatorKeys.forEach(key => {
     key.addEventListener("click", operate);
@@ -82,7 +82,7 @@ function populateDisplay(e) {
             displayValue = newNum;
             screen.textContent = displayValue;
         }
-        else if (displayValue.length == 10) {
+        else if (displayValue.length == 8) {
             newNum = "";
         }
         else if (newNum === ".") {
@@ -182,19 +182,19 @@ function getFirstNum() {
     //make the firstNum variable equal to the value of the first user input
     firstNum = +displayValue;
 
-    //reset internal display variable so answer value doesn't concatenate 
+    //reset internal display variable so answer value doesn't concatenate with new input
     displayValue = "0";
 };
 
 function checkIfOverflow(displayStr) {
-    if (displayStr.length > 10) {
+    if (displayStr.length > 8) {
         if (displayStr.includes(".")) {
-            let n = 9 - displayStr.indexOf(".");
+            let n = 7 - displayStr.indexOf(".");
             displayStr = +displayStr;
             return Math.round(displayStr * (10 ** n))/ (10 ** n);
         }
         else {
-            return "E" + displayStr.substring(0, 9);
+            return "E" + displayStr.substring(0, 7);
         }
     }
     return displayStr;
