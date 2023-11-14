@@ -6,38 +6,12 @@ let displayValue = "";
 const screen = document.querySelector("#screen");
 
 //number button eventlisteners
-const nineKey = document.querySelector("#nine");
-nineKey.addEventListener("click", populateDisplay);
 
-const eightKey = document.querySelector("#eight");
-eightKey.addEventListener("click", populateDisplay);
+let numberKeys = Array.from(document.querySelectorAll(".numbers"));
 
-const sevenKey = document.querySelector("#seven");
-sevenKey.addEventListener("click", populateDisplay);
-
-const sixKey = document.querySelector("#six");
-sixKey.addEventListener("click", populateDisplay);
-
-const fiveKey = document.querySelector("#five");
-fiveKey.addEventListener("click", populateDisplay);
-
-const fourKey = document.querySelector("#four");
-fourKey.addEventListener("click", populateDisplay);
-
-const threeKey = document.querySelector("#three");
-threeKey.addEventListener("click", populateDisplay);
-
-const twoKey = document.querySelector("#two");
-twoKey.addEventListener("click", populateDisplay);
-
-const oneKey = document.querySelector("#one");
-oneKey.addEventListener("click", populateDisplay);
-
-const zeroKey = document.querySelector("#zero");
-zeroKey.addEventListener("click", populateDisplay);
-
-const deciKey = document.querySelector("#decimal");
-deciKey.addEventListener("click", populateDisplay);
+numberKeys.forEach(key => {
+    key.addEventListener("click", populateDisplay);
+});
 
 //clear buttons event listeners
 
@@ -168,7 +142,6 @@ function operate(e) {
         }
 
         displayValue = answer;
-        
 
         //make new firstNum variable equal the value
         firstNum = +displayValue;
@@ -220,8 +193,6 @@ function getFirstNum() {
     //reset internal display variable so answer value doesn't concatenate 
     displayValue = "0";
 };
-
-//todo: Fix overflowing numbers
 
 function checkIfOverflow(displayStr) {
     if (displayStr.length > 10) {
