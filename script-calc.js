@@ -143,6 +143,8 @@ function operate(e) {
     }
     else {
 
+        //catch if user accidentally pressed operator sign twice
+
         //make the new input equal to the secondNum variable
         secondNum = +displayValue;
 
@@ -166,12 +168,15 @@ function operate(e) {
         }
 
         displayValue = answer;
+        
 
         //make new firstNum variable equal the value
         firstNum = +displayValue;
 
+        //check to see if answer will overflow
         //show user what the result of continuous calculation is
-        screen.textContent = firstNum;
+        console.log("is going to check if overflow");
+        screen.textContent = checkIfOverflow(firstNum.toString());
 
         //reset value so addional input doesn't concatenate
         displayValue = "0";
@@ -207,3 +212,21 @@ function getFirstNum() {
     //reset internal display variable so answer value doesn't concatenate 
     displayValue = "0";
 };
+
+//todo: Fix overflowing numbers
+
+function checkIfOverflow(displayStr) {
+    console.log(displayStr);
+    console.log(displayStr.length);
+    if (displayStr.length > 10) {
+        if (displayStr.includes(".")) {
+            let n = 9 - displayStr.indexOf(".");
+            displayStr = +displayStr;
+            return Math.round(displayStr * (10 ** n))/ (10 ** n);
+        }
+        else {
+            return "E" + displayStr.substring(0, 9);
+        }
+    }
+    return displayStr;
+}
