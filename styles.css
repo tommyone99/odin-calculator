@@ -8,11 +8,22 @@
     src: url(/fonts/varela-round.woff2);
 }
 
+@font-face {
+    font-family: LexendBold;
+    src: url(/fonts/Lexend-Bold.woff2);
+}
+
+@font-face {
+    font-family: LexendLight;
+    src: url(/fonts/Lexend-Light.woff2);
+}
+
 button {
     width: 60px;
     aspect-ratio: 1/1;
     font-family: ValeraRound;
     font-size:x-large;
+    background-color: #FDFFF5;;
 }
 
 img {
@@ -83,7 +94,7 @@ body {
 
 .screen {
     background-color: #3A2A2E;
-    color: #AF0C25;
+    color: red;
     width: 244px;
     flex: 1 1 0;
     padding: 12px 36px;
@@ -122,6 +133,39 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    margin-top: 2%;
+}
+
+.model-name {
+    font-family: LexendBold;
+    font-size: xx-large;
+    color: #FDFFF5;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.title-text {
+    font-family: LexendBold;
+    font-size: large;
+    color: #FDFFF5;
+}
+
+.sub-title-text {
+    font-family: LexendLight;
+    font-size: large;
+    color: #FDFFF5;
+    margin-bottom: 16px;
+}
+
+.wood-bg-border {
+    border-radius: 12px;
+    background-color: #FDFFF5;
+    padding: 18px;
+}
+
+.wood-bg {
+    border-radius: 12px;
+    padding: 54px;
+    background-image: url(/img/FreeVector-Wood-Pattern.jpg);
 }
