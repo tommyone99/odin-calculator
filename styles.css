@@ -54,7 +54,7 @@ body {
 }
 
 .case {
-    padding: 90px 0px 24px 0px;
+    padding: 90px 16px 24px 16px;
     background-color: #FEEDD0;
     max-width: 342px;
     border-radius: 16px 16px 8px 8px;
