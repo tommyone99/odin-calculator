@@ -20,6 +20,10 @@ img {
     height: auto;
 }
 
+body {
+    background-color: #E7647A;
+}
+
 .buttons-container {
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +55,7 @@ img {
 
 .case {
     padding: 90px 0px 24px 0px;
-    background-color: #DDCEA4;
+    background-color: #FEEDD0;
     max-width: 342px;
     border-radius: 16px 16px 8px 8px;
 }
@@ -78,8 +82,8 @@ img {
 }
 
 .screen {
-    background-color: darkred;
-    color: red;
+    background-color: #3A2A2E;
+    color: #AF0C25;
     width: 244px;
     flex: 1 1 0;
     padding: 12px 36px;
@@ -91,7 +95,7 @@ img {
 }
 
 .beige-btn {
-    background-color: #E0D2AE;
+    background-color: #FEE9C4;
 }
 
 .blank {
@@ -106,6 +110,18 @@ img {
 }
 
 #equals {
-    background-color: #FD9D56;
+    background-color: #FEAF45;
 }
 
+.bg {
+    background-color: #E7647A;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
